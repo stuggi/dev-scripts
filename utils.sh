@@ -41,6 +41,7 @@ function create_cluster() {
     export TF_LOG=DEBUG
 
     $OPENSHIFT_INSTALLER --dir "${assets_dir}" --log-level=debug create manifests
+    sed -i 's/  mastersSchedulable:.*/  mastersSchedulable: true/' "${assets_dir}"/manifests/cluster-scheduler-02-config.yml
 
     generate_assets
     custom_ntp
