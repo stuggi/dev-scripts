@@ -1,5 +1,10 @@
 networkConfig:
   interfaces:
+  - name: enp6s0
+    type: ethernet
+    state: up
+    ipv4:
+      dhcp: false
   - name: enp6s0.99
     type: vlan
     state: up
@@ -11,6 +16,11 @@ networkConfig:
       - ip: "192.168.111.111"
         prefix-length: 24
       enabled: true
+  - name: enp7s0
+    type: ethernet
+    state: down
+    ipv4:
+      dhcp: false
   dns-resolver:
     config:
       server:

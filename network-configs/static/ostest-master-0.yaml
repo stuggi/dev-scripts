@@ -1,8 +1,11 @@
 networkConfig:
   interfaces:
-  - name: enp2s0
-    type: ethernet
+  - name: enp6s0.99
+    type: vlan
     state: up
+    vlan:
+      id: 99
+      base-iface: enp6s0
     ipv4:
       address:
       - ip: "192.168.111.110"
@@ -16,4 +19,4 @@ networkConfig:
     config:
     - destination: 0.0.0.0/0
       next-hop-address: 192.168.111.1
-      next-hop-interface: enp2s0
+      next-hop-interface: enp6s0.99
